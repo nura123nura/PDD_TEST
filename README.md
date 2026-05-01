@@ -12,7 +12,6 @@ Node.js, PostgreSQL және Google Gemini API негізіндегі веб-қ�
 - [Docker арқылы іске қосу](#docker-арқылы-іске-қосу)
 - [Мониторинг](#мониторинг)
 - [Инфрақұрылым](#инфрақұрылым)
-- [Маңызды ескертпелер](#маңызды-ескертпелер)
 
 ---
 
@@ -177,26 +176,3 @@ terraform init
 terraform plan
 terraform apply
 ```
-
----
-
-## Маңызды ескертпелер
-
-**GitHub-қа жүктемес бұрын міндетті түрде орындаңыз:**
-
-1. `.gitignore` файлын жасаңыз және мыналарды косыңыз:
-
-```gitignore
-node_modules/
-.env
-*.log
-terraform/.terraform/
-terraform/terraform.tfstate
-terraform/terraform.tfstate.backup
-```
-
-2. `docker-compose.yml` ішіндегі барлық құпия деректерді (API кілт, дерекқор паролі) `.env` файлына көшіріп, compose файлында тек `${VARIABLE_NAME}` синтаксисін қолданыңыз.
-
-3. `.env` файлын ешқашан Git-ке қоспаңыз. Тек `.env.txt` үлгі файлын (бос мәндермен) репозиторийге қосуға болады.
-
-> `node_modules` папкасы zip-те бар, бірақ GitHub-қа жүктеудің қажеті жоқ. `npm install` бұл тәуелділіктерді өздігінен орнатады.
